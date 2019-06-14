@@ -11,20 +11,26 @@
 
 ## 滤波器改造
 D4D 原设计的滤波器是一个5单元的低通滤波器，7MHz 版本的实际带宽是 10MHz，对 14MHz 的衰减不足。通过简单增加两个 470p 的电容就可以将带宽降至 7.2MHz，且对 14MHz 的衰减增加 10dB。代价是低通滤波器的带内驻波变大，不过这对于单频点的 D4D 而言不是问题。
+![改造的滤波器电路](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-20.png)
 
 新增的两个电容可以安装在电路板的背面，直接与 C21、C24 并联即可。
+![改造的滤波器安装](https://github.com/cnsit/radio/blob/D4D/articles/d4d/thumbnail_Image-19.png)
 
 下面是改造前后滤波器的频率响应曲线对比：
+![频率响应曲线对比](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-22.png)
 
 ## 射频功放改造
 D4D 的射频功放是其设计上的亮点，通过精心筛选的功率管能以最简洁的电路稳定输出 1W（实测12v供电可以达到1.5W）。只是，为了能够进一步提升输出信号质量和稳定度，将功放部分的偏置电阻 R8（3.3k）跨接到 Q4 的基极和集电极。
+![射频功放的改造电路](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-23.png)
+![射频功放的改造安装](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-16.png)
+
 ## VOX 声控改造
 D4D 原设计的 VOX 声控电路需要至少 1.2Vpp（600mVcp）的音频信号才能触发，对于很多笔记本电脑甚至台式机的声卡而言，这个输出幅度颇有难度。BD6CR 甚至建议大家使用外接声卡来达到这个触发电平。
 
 然而，D4D 的 VOX 前级完全可以通过改造从开关电路变成放大电路，从而极大地降低对电脑声卡输出电平的要求。
-
+![VOX的改造电路](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-21.png)
 经过试验，此改造电路可以在 400~3KHz 以 400mVpp（200mVcp）的音频可靠触发。之所以没有将灵敏度调得更高，是为了避免出现误触发的情况。误触发在市电干扰严重的地方，有可能因人体的触碰而触发发射状态。
-
+![VOX的改造安装](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-18.png)
 声控电路元件参数如下：
 - R1 14.3
 - C1 2u
@@ -47,9 +53,9 @@ D4D 的原设计还有一个 by design 的“特性”：上电开机的瞬间�
 这一现象，本来没有什么大问题。但是，如果碰巧你的天馈系统驻波较高，那么，开机瞬间的射频干扰会让 D4D 无法回到接收状态，从而“锁死”在发射状态，这可就不好玩了。所以，必须解决。
 
 解决的思路也非常直接：在开机瞬间断开收发继电器的电源，使得即使 VOX 因为某种原因触发了，继电器也无法动作。稍等片刻之后，待 VOX 电路稳定了，再自动接回继电器。
-
+![开机继电器延时的改造电路](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-24.png)
 电路元件选择贴片元件，正好可以安装在电路板正面 R6、Q6 中间，把中间这段原本接入继电器线圈的电路割断，插入延迟电路。
-
+![开机继电器延时的改造安装](https://github.com/cnsit/radio/blob/D4D/articles/d4d/Image-17.png)
 继电器延迟电路的元件参数如下：
 - P-MOSFET：AO3407
 - C1：0.33u（我没有这个容量的贴片电容，所以用了1u的，缺点是放电时间较长，关机后5秒内开机将导致延迟失效，不过问题不大，很少会频繁快速开关机）
@@ -62,3 +68,5 @@ D4D 的原设计还有一个 by design 的“特性”：上电开机的瞬间�
 
 ## 使用中需要注意的问题
 - 供电电流必须足（大于400mA），可以避免收发切换时继电器来回抖动切换
+
+总的来说，D4D 设计简洁、套件质量精良，制作非常有趣和方便！
