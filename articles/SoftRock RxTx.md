@@ -31,3 +31,10 @@ USB 和频率合成部分、接收部分、发射部分、射频放大部分、�
 # 实测
 - 接天线
 - 公园实测
+
+# 参考链接
+- [制作说明](http://wb5rvz.org/ensemble_rxtx/index?projectId=14)
+- [元件清单](http://wb5rvz.org/ensemble_rxtx/Inventory)
+- [电路图一](http://wb5rvz.org/ensemble_rxtx/sheet1.pdf)
+- [电路图二](http://wb5rvz.org/ensemble_rxtx/sheet2.pdf)
+- [电路图三](http://wb5rvz.org/ensemble_rxtx/sheet3.pdf)
