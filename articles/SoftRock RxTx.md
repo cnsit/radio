@@ -38,3 +38,6 @@ USB 和频率合成部分、接收部分、发射部分、射频放大部分、�
 - [电路图一](http://wb5rvz.org/ensemble_rxtx/sheet1.pdf)
 - [电路图二](http://wb5rvz.org/ensemble_rxtx/sheet2.pdf)
 - [电路图三](http://wb5rvz.org/ensemble_rxtx/sheet3.pdf)
+- [Si570 配置软件](pe0fko.nl/CFGSR/setup.exe)
+- [Rocky 测试软件](http://www.dxatlas.com/Rocky/)
+- [HDSDR](http://hdsdr.de/)
