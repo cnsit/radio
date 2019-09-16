@@ -30,6 +30,12 @@ USB 和频率合成部分、接收部分、发射部分、射频放大部分、�
 
 # 实测
 - 接天线
+
+我手里并没有合适的天线可供测试，所以从阳台挂出去了一段约4.5米长的电线，接自制的 z-match 天调来做测试。
+由于位置不佳，周围楼群阻挡，这套天馈的接收效果一般，但仍好于我的另一套 SSB 电台，在黄昏时可以收到一些 cw 信号。
+
+广播就更好了，接收非常地清晰。
+
 - 公园实测
 
 # 参考链接
@@ -38,6 +44,7 @@ USB 和频率合成部分、接收部分、发射部分、射频放大部分、�
 - [电路图一](http://wb5rvz.org/ensemble_rxtx/sheet1.pdf)
 - [电路图二](http://wb5rvz.org/ensemble_rxtx/sheet2.pdf)
 - [电路图三](http://wb5rvz.org/ensemble_rxtx/sheet3.pdf)
+- [AVR USB 驱动](https://pe0fko.nl/SR-V9-Si570/PE0FKO-USB-Driver-1.2.6.0.zip)
 - [Si570 配置软件](pe0fko.nl/CFGSR/setup.exe)
 - [Rocky 测试软件](http://www.dxatlas.com/Rocky/)
 - [HDSDR](http://hdsdr.de/)
