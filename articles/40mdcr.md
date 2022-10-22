@@ -9,6 +9,7 @@
 - 总体增益 70dB 左右
 - 9 ～ 12v 直流供电
 ## 电路图
-![40米波段直放式接收机电路图](https://github.com/cnsit/radio/blob/master/articles/40mdcr/circuit.png)
+![40米波段直放式接收机电路图](https://github.com/cnsit/radio/blob/master/articles/40mdcr/40mdcr.jpg)
 ## 实际接收效果
-![40米波段直放式接收机使用效果](https://github.com/cnsit/radio/blob/master/articles/40mdcr/40mdcr.mp4)
+![40米波段直放式接收机使用截图](https://github.com/cnsit/radio/blob/master/articles/40mdcr/40mdcr-in-use.jpg)
+![40米波段直放式接收机使用视频](https://github.com/cnsit/radio/blob/master/articles/40mdcr/40mdcr.mp4)
